@@ -101,23 +101,19 @@
   --surface-hover: oklch(0.96 0 0);
   --surface-active: oklch(0.94 0 0);
 
-  /* ── Primary Color ───────────────────────────────────────────
-     !! OVERRIDE REQUIRED — Layout Builder must replace --primary and
-        --primary-h with domain-appropriate oklch values.
-        See references/design-system.md for the 14-domain color table.
-        QA rejects builds where --primary stays oklch(0.205 0 0). !! */
-  --primary: oklch(0.205 0 0);
+  /* ── Primary Color — Clinical Trust / Cerulean ──────────────── */
+  --primary: oklch(0.55 0.14 180);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-h: 270; /* Integer hue extracted from --primary */
+  --primary-h: 180;
 
   /* ── Derived Color Tokens ────────────────────────────────── */
-  --section-dark: oklch(0.10 0.02 var(--primary-h));
-  --secondary: oklch(0.97 0 0);
+  --section-dark: oklch(0.10 0.02 180);
+  --secondary: oklch(0.97 0.005 180);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.96 0.005 180);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: oklch(0.55 0.10 220);
+  --accent-foreground: oklch(0.985 0 0);
 
   /* ── Semantic Colors ─────────────────────────────────────── */
   --destructive: oklch(0.577 0.245 27.325);
@@ -127,29 +123,30 @@
   --warning-foreground: oklch(0.205 0 0);
 
   /* ── Borders & Inputs ────────────────────────────────────── */
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.90 0 0);
+  --input: oklch(0.90 0 0);
+  --ring: oklch(0.55 0.14 180);
 
   /* ── Chart Colors ────────────────────────────────────────────
      Layout Builder harmonizes to primary hue. See design-system.md. */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Chart colors harmonized to clinical cerulean hue */
+  --chart-1: oklch(0.55 0.14 180);
+  --chart-2: oklch(0.50 0.12 200);
+  --chart-3: oklch(0.60 0.10 160);
+  --chart-4: oklch(0.65 0.15 145);
+  --chart-5: oklch(0.45 0.08 220);
 
   /* ── Sidebar Colors ──────────────────────────────────────────
      After color override: --sidebar-primary and --sidebar-ring
      should match --primary.                                     */
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: oklch(0.97 0.005 180);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.55 0.14 180);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.94 0.01 180);
   --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-border: oklch(0.90 0 0);
+  --sidebar-ring: oklch(0.55 0.14 180);
 
   /* ── Surface / Card Tokens ───────────────────────────────────
      Driven by [data-theme] aesthetic — not overridden per domain.
@@ -189,11 +186,8 @@
   --content-padding: 1.5rem;
   --nav-item-py: 0.5rem;
 
-  /* Sidebar surface — override to tint sidebar by domain:
-     White (default): oklch(1 0 0)
-     Tinted:          oklch(0.985 0.008 var(--primary-h))
-     Subdued:         oklch(0.97 0.005 var(--primary-h))          */
-  --sidebar-bg: oklch(1 0 0);
+  /* Sidebar surface — tinted for healthcare */
+  --sidebar-bg: oklch(0.97 0.005 180);
 
   /* Tab bar background — tint to primary hue subtly if desired */
   --tab-bar-bg: var(--background);
@@ -753,6 +747,23 @@
   --dur-normal: 120ms;
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
   --t-interactive: var(--dur-fast) var(--ease-snappy);
+}
+
+/* ── Staggered card reveal animation ────────────────────────── */
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up-in {
+  animation-name: fade-up-in;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
 }
 
 /* ============================================================

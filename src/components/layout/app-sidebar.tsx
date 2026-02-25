@@ -13,6 +13,11 @@ import {
   User,
   ArrowRight,
   Github,
+  Network,
+  MessageSquareCode,
+  GitMerge,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -23,19 +28,19 @@ import {
 // ═══════════════════════════════════════════════════════════════════════════
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  // Dashboard Builder agent: add 3-5 feature page nav items here.
-  // Example: { href: "/orders", label: "Orders", icon: ShoppingCart },
+  { href: "/", label: "Integration Hub", icon: LayoutDashboard },
+  { href: "/emr-feeds", label: "EMR Feeds", icon: Network },
+  { href: "/hl7-messages", label: "HL7 Messages", icon: MessageSquareCode },
+  { href: "/data-mapping", label: "Data Mapping", icon: GitMerge },
+  { href: "/compliance", label: "HIPAA Compliance", icon: ShieldCheck },
+  { href: "/patients", label: "Patient Records", icon: Users },
 ];
 
 function SidebarLogo({ collapsed }: { collapsed: boolean }) {
   return (
     <div className="p-4 border-b border-border/60 flex items-center gap-3">
-      {/* Agent: replace the letter icon with a relevant Lucide icon if appropriate */}
       <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-        <span className="text-primary font-bold text-sm font-mono">
-          {APP_CONFIG.appName.charAt(0)}
-        </span>
+        <Network className="w-4 h-4 text-primary" />
       </div>
       {!collapsed && (
         <div className="overflow-hidden">
