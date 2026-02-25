@@ -1,6 +1,6 @@
 Hi,
 
-Real-time HL7 parsing through Mirth Connect with HIPAA-compliant EMR integration is exactly what the demo covers — built a working version before reaching out: {VERCEL_URL}
+Real-time HL7 parsing through Mirth Connect with HIPAA-compliant EMR integration is exactly what the demo covers — built a working version before reaching out: https://clinical-data-integration.vercel.app
 
 It shows HL7 message ingestion, clinical data normalization, and an audit-ready dashboard — the parts that make this kind of MVP technically non-trivial.
 

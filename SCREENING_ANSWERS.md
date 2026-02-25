@@ -2,7 +2,7 @@
 
 **Q1: Describe your recent experience with similar projects.**
 
-Built MedRecord AI — a clinical data extraction pipeline — and Southfield Healthcare, a patient scheduling and clinical workflow platform. Both involved EMR data handling and clinical team workflows. Working demo built specifically for your project: {VERCEL_URL}
+Built MedRecord AI — a clinical data extraction pipeline — and Southfield Healthcare, a patient scheduling and clinical workflow platform. Both involved EMR data handling and clinical team workflows. Working demo built specifically for your project: https://clinical-data-integration.vercel.app
 
 ---
 
